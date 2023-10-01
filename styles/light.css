@@ -1,12 +1,39 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --main-color: #FFF1F7;
+  --accent-color: hsla(327, 100%, 78%, 1);
+  --content-color: #353430;
+  --title-color: #FFC2E6;
+  --header-shadow-color: #FF0070;
+  --nav-color: #353430;
+  --hover-color: rgba(50, 49, 45, 0.40);
+  background-image: url(../images/cover-image-light.png);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: #FFF1F7;
+    --accent-color: hsla(327, 100%, 78%, 1);
+    --content-color: #353430;
+    --title-color: #FFC2E6;
+    --header-shadow-color: #FF0070;
+    --nav-color: #353430;
+    --hover-color: rgba(50, 49, 45, 0.40);
+    background-image: url(../images/cover-image-light.png);   
+    }
+}
+
+.page.theme_light .main__section-title {
+  color: var(--content-color);
+}
+
+.page.theme_light .title-decor {
+  color: var(--content-color);
+}
+
+.header__theme-menu-button_type_light {
+  cursor: pointer;
+}
+
+.page.theme_light .decorative-sign {
+  display: none;
 }
