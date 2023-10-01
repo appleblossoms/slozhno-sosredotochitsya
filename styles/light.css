@@ -4,8 +4,10 @@
   --content-color: #353430;
   --title-color: #FFC2E6;
   --header-shadow-color: #FF0070;
-  --nav-color: #353430;
+  --nav-color: var(--content-color);
   --hover-color: rgba(50, 49, 45, 0.40);
+  --title-decor-color: var(--content-color);
+  --main-section-title-color: var(--content-color);
   background-image: url(../images/cover-image-light.png);
 }
 
@@ -18,6 +20,8 @@
     --header-shadow-color: #FF0070;
     --nav-color: #353430;
     --hover-color: rgba(50, 49, 45, 0.40);
+    --title-decor-color: var(--content-color);
+    --main-section-title-color: var(--content-color);
     background-image: url(../images/cover-image-light.png);   
     }
 }
@@ -37,3 +41,9 @@
 .page.theme_light .decorative-sign {
   display: none;
 }
+
+  /* @media (width < 1024px) {
+    .page.theme_light .header__theme-menu-list {
+    margin-block-start: 17.4%;
+  }
+  } */
