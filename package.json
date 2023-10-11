@@ -11,9 +11,6 @@
     "lintfix": "stylelint ./src/**/*.css --fix",
     "checkAll": "npm run check && npm run lint",
     "fixAll": "npm run format && npm run lintfix",
-    "build": "gulp build",
-    "dev": "gulp",
-    "fixAndBuild": "npm run fixAll && npm run build",
     "lintfixAndPush": "npm run fixAll && git add . && git commit -m 'no description' && git push"
   },
   "repository": {
