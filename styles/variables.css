@@ -18,13 +18,16 @@
 
   .page.theme_auto {
     background-image: url(../images/cover-image-light.png);
+
+    & .decorative-sign {
+      display: none;
+    }
   }
 
-  .page.theme_auto .decorative-sign {
-    display: none;
-  }
+  @media (width >= 1024px) {
 
-  .page.theme_auto .header__theme-menu-list {
-    margin-block-start: 17.4%;
+    .page.theme_auto {
+      --header-shadow-color: #ff0070;
+    }
   }
 }
