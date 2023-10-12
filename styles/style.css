@@ -299,14 +299,14 @@
   .first__section {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
+  }
 
-    & .main__section-title {
-      margin-block-start: 0;
-    }
+  .first__section .main__section-title {
+    margin-block-start: 0;
+  }
 
-    & .main__section-article {
-      grid-column: 2;
-    }
+  .first__section .main__section-article {
+    grid-column: 2;
   }
 
   .second__section .main__section-title {

@@ -9,18 +9,18 @@
   --title-decor-color: var(--content-color);
   --main-section-title-color: var(--content-color);
   background-image: url(../images/cover-image-light.png);
+}
 
-  & .main__section-title {
-    color: var(--content-color);
-  }
+.page.theme_light .main__section-title {
+  color: var(--content-color);
+}
 
-  & .title-decor {
-    color: var(--content-color);
-  }
+.page.theme_light .title-decor {
+  color: var(--content-color);
+}
 
-  & .decorative-sign {
-    display: none;
-  }
+.page.theme_light .decorative-sign {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -39,10 +39,10 @@
 
   .page.theme_auto {
     background-image: url(../images/cover-image-light.png);
+  }
 
-    & .decorative-sign {
-      display: none;
-    }
+  .page.theme_auto .decorative-sign {
+    display: none;
   }
 }
 
