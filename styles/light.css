@@ -4,7 +4,7 @@
   --content-color: #353430;
   --title-color: #ffc2e6;
   --header-shadow-color: #ff8dcb;
-  --nav-color: var(--content-color);
+  --border-color: var(--content-color);
   --hover-color: rgb(50 49 45 / 0.4);
   --title-decor-color: var(--content-color);
   --main-section-title-color: var(--content-color);
@@ -31,7 +31,7 @@
     --content-color: #353430;
     --title-color: #ffc2e6;
     --header-shadow-color: #ff8dcb;
-    --nav-color: #353430;
+    --border-color: var(--content-color);
     --hover-color: rgb(50 49 45 / 0.4);
     --title-decor-color: var(--content-color);
     --main-section-title-color: var(--content-color);
@@ -39,6 +39,10 @@
 
   .page.theme_auto {
     background-image: url(../images/cover-image-light.png);
+
+    & .decorative-sign {
+      display: none;
+    }
   }
 }
 
