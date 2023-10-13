@@ -38,7 +38,7 @@
 
 .header {
   position: relative;
-  margin-block-end: 14.08%;
+  margin-block-end: 50px; /* works fine with percents on my pc but may break on other devices for some reason */
 }
 
 .header::before {
@@ -261,7 +261,7 @@
   }
 
   .header {
-    margin-block-end: 11%;
+    margin-block-end: 80px;
   }
 
   .header::before {
@@ -375,10 +375,6 @@
 }
 
 @media (width >= 1024px) {
-
-  .header {
-    margin-block-end: 8.3%;
-  }
 
   .header::after {
     margin-block-start: 8.94%;
