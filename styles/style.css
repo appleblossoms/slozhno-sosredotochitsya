@@ -377,7 +377,7 @@
 @media (width >= 1024px) {
 
   .header::after {
-    margin-block-start: 8.94%;
+    margin-block-start: 9.14%;
   }
 
   .header__theme-menu {
