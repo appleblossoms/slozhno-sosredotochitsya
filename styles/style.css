@@ -1,7 +1,6 @@
 .page {
   font-family: 'IBM Plex mono', sans-serif;
   font-size: 18px;
-  padding: 10px;
   color: var(--content-color);
   background-color: var(--main-color);
   background-image: url(../images/cover-image-dark.png);
@@ -37,8 +36,10 @@
 }
 
 .header {
-  position: relative;
-  margin-block-end: 50px; /* works fine with percents on my pc but may break on other devices for some reason */
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  padding: 10px;
+  margin-block-end: 10.67%;
 }
 
 .header::before {
@@ -50,8 +51,7 @@
   border-block-end: none;
   border-inline-start: none;
   border-inline-end: 1px solid var(--border-color);
-  right: 0;
-  top: 0;
+  justify-self: end;
 }
 
 .header::after {
@@ -62,15 +62,15 @@
   border-block-end: 1px solid var(--border-color);
   border-inline-start: 1px solid var(--border-color);
   border-inline-end: none;
-  margin-block-start: 8.73%;
-  display: block;
+  align-self: end;
 }
 
 .decorative-sign {
   color: var(--accent-color);
   position: absolute;
-  right: 28px;
-  top: 1px;
+  justify-self: end;
+  margin-right: 29px;
+  margin-top: 1px;
 }
 
 .decorative-sign::after {
@@ -88,16 +88,15 @@
 
 .header__theme-menu {
   color: var(--border-color);
-  display: flex;
-  width: 100%;
-  justify-content: end;
+  justify-self: end;
+  align-self: center;
+  height: fit-content;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-  margin-block-start: 17.74%;
 }
 
 .header__theme-menu-button {
@@ -133,10 +132,11 @@
   font-weight: 700;
   font-size: clamp(7.25rem, 7.25rem + 0vw, 7.25rem);
   line-height: 83.5%;
-  margin-block: 18.87% 15.21%;
-  display: flex;
-  width: 100%;
-  justify-content: start;
+}
+
+.header__title {
+  align-self: end;
+  margin-block-end: 10px;
 }
 
 .title-decor {
@@ -149,11 +149,16 @@
 
 .title-wrapper {
   max-width: 364px;
-  margin-left: auto;
+  height: fit-content;
+  justify-self: end;
+  align-self: center;
+  margin-block-end: 14px;
+  background-color: var(--accent-color);
 }
 
 .main {
-  margin-block-end: 14.08%;
+  padding-inline: 10px;
+  margin-block-end: 10.67%;
 }
 
 .main__section-article_header,
@@ -192,6 +197,10 @@
   font-weight: 400;
 }
 
+.fourth__section {
+  margin-block-end: 0;
+}
+
 .fourth__section .title-decor {
   margin-block-end: 10px;
 }
@@ -212,15 +221,12 @@
 }
 
 .footer {
-  position: relative;
   display: grid;
-  justify-items: end;
+  padding: 10px;
+  position: relative;
 }
 
 .footer::before {
-  position: absolute;
-  top: 0;
-  right: 0;
   content: ' ';
   width: 25px;
   height: 25px;
@@ -228,6 +234,7 @@
   border-block-end: none;
   border-inline-start: none;
   border-inline-end: 1px solid var(--border-color);
+  justify-self: end;
 }
 
 .footer::after {
@@ -239,56 +246,78 @@
   border-inline-start: 1px solid var(--border-color);
   border-inline-end: none;
   justify-self: start;
+  align-self: end;
 }
 
 .footer__title {
-  display: initial;
-  text-align: center;
-  margin-block: 80.56% 72.39%;
+  justify-self: center;
+  align-self: center;
   line-height: 68%;
   text-shadow: 2px 2px 0 var(--header-shadow-color);
 }
 
 .header,
 .footer {
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 668px;
+}
+
+@media (height < 668px) {
+
+  .header {
+    grid-template-rows: 225px 207px 216px 0;
+  }
+}
+
+@media (height >= 668px) {
+
+  header::after {
+    position: absolute;
+    bottom: 10px;
+  }
 }
 
 @media (width >= 768px) {
 
-  .page {
+  .header {
+    margin-block-end: 60px;
     padding: 20px;
   }
 
-  .header {
-    margin-block-end: 80px;
-  }
-
-  .header::before {
-    margin-inline-start: 2.7%;
-  }
-
   .header::after {
-    margin-block-start: 19%;
+    left: 20px;
+    bottom: 20px;
   }
 
-  .header__theme-menu-list {
-    margin-block-start: 23.21%;
+  .header__theme-menu {
+    margin-block-start: 15.1%;
   }
 
   .title {
-    margin-inline-start: -20px;
-    margin-block: 24.17% 21.97%;
     font-size: clamp(7.5rem, 7.5rem + 0vw, 7.5rem);
   }
 
+  .header__title {
+    margin-inline-start: -20px;
+    margin-block-end: 0;
+    align-self: center;
+  }
+
+  .title-wrapper {
+    margin-block-end: 15.52%;
+  }
+
   .main {
-    margin-block-end: 10.69%;
+    padding-inline: 20px;
+    margin-block-end: 7.81%;
   }
 
   .main__section {
-    margin-block-end: 11.12%;
     gap: 20px;
+  }
+
+  .main__section:not(:last-of-type) {
+    margin-block-end: 11.12%;
   }
 
   .main__section-article,
@@ -368,47 +397,43 @@
     grid-column: 2 / 4;
   }
 
+  .footer {
+    padding: 20px;
+  }
+
   .footer__title {
-    margin-block: 62.08% 58.37%;
     margin-inline-end: 0.12%;
   }
 }
 
 @media (width >= 1024px) {
 
-  .header::after {
-    margin-block-start: 9.14%;
-  }
-
   .header__theme-menu {
-    justify-content: center;
+    justify-self: center;
+    align-self: initial;
+    margin-block-start: 0;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
     gap: 10px;
-    margin-block-start: 0;
-  }
-
-  .page.theme_auto .header__theme-menu-list {
-    margin-block-start: 0;
   }
 
   .title {
     font-size: clamp(9.8125rem, 9.8125rem + 0vw, 9.8125rem);
-    margin-block: 27.6% 11.78%;
   }
 
   .title-wrapper {
     min-width: 49.89%;
+    margin-block-end: 5.79%;
   }
 
   .main {
-    margin-block-end: 8.23%;
+    margin-block-end: 5.85%;
   }
 
-  .main__section {
-    margin-block-end: 8.23%;
+  .main__section:not(:last-of-type) {
+    margin-block-end: 8.13%;
     column-gap: 10px;
   }
 
@@ -422,9 +447,5 @@
 
   .gallery {
     grid-template-rows: 260px 315px 433px;
-  }
-
-  .footer__title {
-    margin-block: 31.5% 29%;
   }
 }
